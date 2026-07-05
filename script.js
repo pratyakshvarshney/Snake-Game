@@ -22,13 +22,10 @@ const rows = Math.floor(board.clientHeight / blockHeight);
 let intervalId = null;
 let timerInterval = null;
 
-// board.style.gridTemplateColumns = `repeat(${cols}, ${blockWidth}px)`;
-// board.style.gridTemplateRows = `repeat(${rows}, ${blockHeight}px)`;
-
 const blocks = [];
 let snake = [
     {
-        x: 1, y: 3,
+        x: 1, y: 0,
     }, 
 ]
 
@@ -157,7 +154,7 @@ function restartGame() {
     timeElement.innerText = time;
 
     modal.style.display = "none";
-    snake = [{x: 1, y: 3}];
+    snake = [{x: 1, y: 0}];
     food = spawnFood();
     blocks[`${food.x}-${food.y}`].classList.add("food");
 
